@@ -1,0 +1,1 @@
+put the style images which have removed clear edge into this folder

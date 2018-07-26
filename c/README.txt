@@ -1,0 +1,1 @@
+put the style images which is from cartoon into this folder
