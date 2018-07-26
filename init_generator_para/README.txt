@@ -1,0 +1,1 @@
+save the trained weight by first 10 epoches
