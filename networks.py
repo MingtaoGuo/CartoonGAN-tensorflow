@@ -6,6 +6,7 @@ class generator:
         self.name = name
 
     def __call__(self, inputs, reuse=False):
+        #just use the network of CycleGAN's generator
         with tf.variable_scope(self.name, reuse=reuse):
             # inputs = tf.pad(inputs, tf.constant([[0, 0], [3, 3], [3, 3], [0, 0]]))
             inputs = tf.nn.relu(InstanceNorm("IN1", conv("c7s1-32", inputs, 32, 7, 1)))
@@ -13,9 +14,7 @@ class generator:
             inputs = tf.nn.relu(InstanceNorm("IN3", conv("d128", inputs, 128, 3, 2)))
             for i in range(6):
                 temp = inputs
-                # inputs = tf.pad(inputs, tf.constant([[0, 0], [1, 1], [1, 1], [0, 0]]), "REFLECT")
                 inputs = tf.nn.relu(InstanceNorm("INB"+str(i), conv("R_conv1"+str(i), inputs, 128, 3, 1)))
-                # inputs = tf.pad(inputs, tf.constant([[0, 0], [1, 1], [1, 1], [0, 0]]), "REFLECT")
                 inputs = conv("R_conv2"+str(i), inputs, 128, 3, 1)
                 inputs = temp + inputs
             inputs = tf.nn.relu(InstanceNorm("IN5", deconv("u64", inputs, 64, 3, 2)))
