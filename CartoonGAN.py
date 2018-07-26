@@ -21,7 +21,6 @@ class CartoonGAN:
         self.D = discriminator("discriminator")
         vgg = VGG("VGG19")
         self.fake_img = self.G(self.p)
-        #label: 0:c, 1:e, 2:g
         self.L_adv = tf.reduce_mean(tf.log(self.D(self.c) + epsilon)) + \
                      tf.reduce_mean(tf.log(1 - self.D(self.e, True) + epsilon)) + \
                      tf.reduce_mean(tf.log(1 - self.D(self.fake_img, True) + epsilon))
@@ -35,9 +34,9 @@ class CartoonGAN:
         self.sess.run(tf.global_variables_initializer())
 
     def train(self, is_init=True):
-        path_p = "E://DeepLearn_Experiment//MSCOCO//"
-        path_c = "E://DeepLearn_Experiment//CartoonSet//c//"
-        path_e = "E://DeepLearn_Experiment//CartoonSet//e//"
+        path_p = "./MSCOCO/"
+        path_c = "./c/"
+        path_e = "./e/"
         filenames_p = os.listdir(path_p)
         filenames_c = os.listdir(path_c)
         filenames_e = os.listdir(path_e)
