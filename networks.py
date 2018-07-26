@@ -8,7 +8,6 @@ class generator:
     def __call__(self, inputs, reuse=False):
         #just use the network of CycleGAN's generator
         with tf.variable_scope(self.name, reuse=reuse):
-            # inputs = tf.pad(inputs, tf.constant([[0, 0], [3, 3], [3, 3], [0, 0]]))
             inputs = tf.nn.relu(InstanceNorm("IN1", conv("c7s1-32", inputs, 32, 7, 1)))
             inputs = tf.nn.relu(InstanceNorm("IN2", conv("d64", inputs, 64, 3, 2)))
             inputs = tf.nn.relu(InstanceNorm("IN3", conv("d128", inputs, 128, 3, 2)))
