@@ -5,7 +5,7 @@ from PIL import Image
 import cv2
 
 def capture_vedio():
-    cap = cv2.VideoCapture("F://迅雷下载//qyqx.mkv")
+    cap = cv2.VideoCapture("movie.mkv")
     if cap.isOpened() == False:
         print("Error opening vedio stream or file")
     count = 0
