@@ -11,6 +11,7 @@ def rem_cl_eg(source_path, c_path, e_path):
     :param e_path: smoothed datasets
     :return:
     """
+    #Easy to remove clear edge, just reduce the image and then Enlarge the image
     filenames = os.listdir(source_path)
     for filename in filenames:
         img = np.array(Image.open(source_path+filename))
