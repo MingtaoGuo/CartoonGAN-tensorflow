@@ -10,6 +10,6 @@ This simple code mainly implement the paper about [CartoonGAN](http://openaccess
 3. Initializing the generator by reconstructing the nature images
 
 ## Results of the paper
-
+![](https://github.com/MingtaoGuo/CartoonGAN-tensorflow/blob/master/images)
 ## Is training ..........
 ---------------------
