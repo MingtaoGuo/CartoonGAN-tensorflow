@@ -13,7 +13,7 @@ This simple code mainly implement the paper about [CartoonGAN](http://openaccess
 ![](https://github.com/MingtaoGuo/CartoonGAN-tensorflow/blob/master/images/paperresult.jpg)
 
 ## How to use the code
-#### Python packages you need:
+#### Python packages you need
 1. python 3.x
 2. tensorflow 1.4.0
 3. pillow
@@ -23,6 +23,7 @@ This simple code mainly implement the paper about [CartoonGAN](http://openaccess
 #### Process of using
 1. Download the cartoon movie, then using 'vedio2img.py' to extract the cartoon images from the cartoon movie. Finally, put the extracted cartoon imges into the folder 'c'.
 2. Using 'remove_clear_edge.py' to remove the extracted cartoon images' clear edge as a new datasets, and then put the unclear edge cartoon images into the folder 'e'
-3. Download the nature image datasets(we use [MSCOCO]() here, not Flicker)
-## Is training ..........
----------------------
+3. Download the nature image datasets(we use [MSCOCO](http://images.cocodataset.org/zips/train2017.zip) here, not [Flicker](https://www.flickr.com/photos/tags/flicker/)), and then put the unzipped MSCOCO datasets into the folder 'MSCOCO'.
+## Results of our code 
+### I'm sorry, this code is under training ..........
+
